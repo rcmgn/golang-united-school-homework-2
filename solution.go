@@ -2,6 +2,10 @@ package square
 
 import "math"
 
+const SidesTriangle = 3
+const SidesSquare = 4
+const SidesCircle = 0
+
 // Define custom int type to hold sides number and update CalcSquare signature by replacing #yourTypeNameHere#
 
 // Define constants to represent 0, 3 and 4 sides.  Test uses mnemos: SidesTriangle(==3), SidesSquare(==4), SidesCircle(==0)
@@ -14,11 +18,11 @@ type myint int
 
 func CalcSquare(sideLen float64, sidesNum myint) float64 {
 	switch sidesNum {
-	case 3:
+	case SidesTriangle:
 		return sideLen * sideLen / 2
-	case 4:
+	case SidesSquare:
 		return sideLen * sideLen
-	case 0:
+	case SidesCircle:
 		return math.Pi * sideLen * sideLen
 	default:
 		return 0
